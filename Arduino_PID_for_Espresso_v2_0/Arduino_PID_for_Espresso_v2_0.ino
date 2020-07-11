@@ -83,6 +83,11 @@ long lastLeftDebounceTime = 0; // the last time the output pin was toggled
 long lastRightDebounceTime = 0; // the last time the output pin was toggled
 long debounceDelay = 300; // the debounce time
 
+//it's necessary to manually add the prototypes for the menuUsed and menuChanged functions here because the Arduino IDE's
+//automated function prototype generation system inserts them after they are referenced in the MenuBackend instantiation
+void menuUsed(MenuUseEvent used);
+void menuChanged(MenuChangeEvent changed);
+
 //Menu variables
 MenuBackend menu = MenuBackend(menuUsed,menuChanged);
 //initialize menu items
